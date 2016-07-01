@@ -30,8 +30,9 @@
         // Set the default template
         $templateCache.put(template_url,
             '<div class="{{ baseClass }}">' +
-            '  <div ng-repeat="i in images">' +
+            '  <div ng-repeat="i in images" ng-if="$index < 5">' +
             '    <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
+            '    <div class="plus-images" ng-if="$index === 4" ng-click="openGallery($index)">+ {{ images.length - 5 }}</div>' +
             '  </div>' +
             '</div>' +
             '<div class="ng-overlay" ng-show="opened">' +
@@ -43,7 +44,7 @@
             '  <a class="nav-left" ng-click="prevImage()"><i class="fa fa-angle-left"></i></a>' +
             '  <img ondragstart="return false;" draggable="false" ng-src="{{ img }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
             '  <a class="nav-right" ng-click="nextImage()"><i class="fa fa-angle-right"></i></a>' +
-            '  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ description }}</span>' +
+            // '  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ description }}</span>' +
             '  <div class="ng-thumbnails-wrapper">' +
             '    <div class="ng-thumbnails slide-left">' +
             '      <div ng-repeat="i in images">' +

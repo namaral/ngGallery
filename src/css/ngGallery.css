@@ -265,3 +265,12 @@ uiload > div {
     -o-animation: uil-ring-anim 1s linear infinite;
     animation: uil-ring-anim 1s linear infinite; 
 }
+
+.plus-images {
+  position: relative;
+  left: -55px;
+  top: 30px;
+  color: white;
+  text-shadow: 1px 1px #000000;
+  cursor: pointer;
+}
